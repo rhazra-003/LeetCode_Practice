@@ -4,10 +4,20 @@ public:
         int i = 0;
         int j = nums.size() - 1;
         
-        while(i<j){
-            if(nums[i]+nums[j] == target) return {i+1,j+1};
-            if(nums[i]+nums[j] < target) i++;
-            else j--;
+        while(i<j)
+        {
+            if(nums[i]+nums[j] == target) 
+            {
+                return {i+1, j+1};
+            }
+            if(nums[i]+nums[j] < target) 
+            {
+                i++;
+            }
+            else 
+            {
+                j--;
+            }
         }
         
         return {};
