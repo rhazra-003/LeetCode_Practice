@@ -16,7 +16,7 @@ public:
                 res = (res + (mod + (pps[r] - pps[i]) * (i - l) % mod - (pps[i] - pps[max(0LL, l)]) * (r - i) % mod) * s[i]) % mod;
            }
 
-                st.push_back(r);
+           st.push_back(r);
         }
         
         return res;
