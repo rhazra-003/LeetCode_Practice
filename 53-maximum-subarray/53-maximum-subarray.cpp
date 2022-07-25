@@ -12,7 +12,9 @@ public:
             MAX = max(sum, MAX);
             
             if(sum < 0) 
+            {
                 sum = 0;
+            }
         }
         
         return MAX;
