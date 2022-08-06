@@ -1,66 +1,44 @@
 class Solution {
 public:
-    void setZeroes(vector<vector<int> > &matrix) {
+    void setZeroes(vector < vector < int >> & matrix) {
+        int col0 = 1, rows = matrix.size(), cols = matrix[0].size();
         
-        int H = matrix.size();
-        int W = matrix[0].size();
-        
-        // find the last 0 row
-        int last_0_row = -1;
-        for (int y = H - 1; y >= 0 && last_0_row == -1; y--)
+        for (int i = 0; i < rows; i++) 
         {
-            for (int x = 0; x < W; x++)
+            //checking if 0 is present in the 0th column or not
+            if (matrix[i][0] == 0) 
             {
-                if (matrix[y][x] == 0)
+                col0 = 0;
+            }
+            for (int j = 1; j < cols; j++) 
+            {
+                if (matrix[i][j] == 0) 
                 {
-                    last_0_row = y;
-                    break;
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
                 }
             }
         }
         
-        if (last_0_row == -1)
+      //traversing in the reverse direction and
+      //checking if the row or col has 0 or not
+      //and setting values of matrix accordingly.
+  
+        for (int i = rows - 1; i >= 0; i--) 
         {
-            return;
-        }
-        
-        // go row by row
-        for (int y = 0; y < last_0_row; y++)
-        {
-            bool this_is_a_0_row = false;
-            
-            for (int x = 0; x < W; x++)
+            for (int j = cols - 1; j >= 1; j--) 
             {
-                if (matrix[y][x] == 0)
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) 
                 {
-                    this_is_a_0_row = true;
-                    matrix[last_0_row][x] = 0;
+                    matrix[i][j] = 0;
                 }
             }
             
-            if (this_is_a_0_row)
+            if (col0 == 0) 
             {
-                for (int x = 0; x < W; x++)
-                {
-                    matrix[y][x] = 0;
-                }
+                matrix[i][0] = 0;
             }
         }
-        
-        // set collums to 0
-        for (int y = 0; y < H; y++)
-        {
-            for (int x = 0; x < W; x++)
-            {
-                if (matrix[last_0_row][x] == 0)
-                    matrix[y][x] = 0;
-            }
-        }
-        
-        // set the last 0 row 
-        for (int x = 0; x < W; x++)
-        {
-            matrix[last_0_row][x] = 0;
-        }
+
     }
 };
