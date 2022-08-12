@@ -1,7 +1,8 @@
 class Solution {
 public:
     bool findRotation(vector<vector<int>>& mat, vector<vector<int>>& target) {
-        if(mat == target){
+        if(mat == target)
+        {
             return true;
         }
         
