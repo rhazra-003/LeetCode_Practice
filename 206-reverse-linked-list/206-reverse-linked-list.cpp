@@ -23,7 +23,7 @@ public:
         while(current_p) {
 
             next_p = current_p->next;
-            current_p->next = prev_p;
+            current_p->next = prev_p; // back binding
             
             prev_p = current_p;
             current_p = next_p;
