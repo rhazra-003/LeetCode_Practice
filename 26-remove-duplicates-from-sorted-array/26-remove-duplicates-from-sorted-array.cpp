@@ -16,6 +16,7 @@ public:
                 length += 1;
             }
         }
+        
         return length;
     }
 };
