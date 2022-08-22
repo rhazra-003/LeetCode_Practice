@@ -39,10 +39,10 @@ public:
 //       return maxi;
 // }
 
+
 // 2. Time complexity - O(n^2)
 // long long maxSubarraySum(int arr[], int n){
-//         long long maxi = INT_MIN;
-        
+//         long long maxi = INT_MIN;       
 //         for(int i = 0; i < n; i++) {
 //     	    long long s = 0; int flag = 0;
 //     	    for(int j = i, t=i; j < n ; j++) {
@@ -60,12 +60,10 @@ public:
 //         return maxi;
 //     }
 
+
 // 3. KADANE'S ALGORITHM 
 // Time complexity - O(n)
-// int maxSubarraySum(int arr[], int n){
-
-
-        
+// int maxSubarraySum(int arr[], int n){       
 //         int maxfar = arr[0];
 //         int maxend = 0;
 //         for(int i=0; i<n; i++) {
@@ -77,6 +75,5 @@ public:
 //                 maxend = 0;
 //             }
 //         }
-//         return maxfar;
-        
+//         return maxfar;    
 //     }
